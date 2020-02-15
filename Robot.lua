@@ -36,7 +36,7 @@
 ---@field public turnRight fun() Like turnLeft
 ---@field public turnAround fun() Like turnLeft
 ---@field public tankCount fun():number The number of tanks installed in the robot.
----@field public selectTank fun(tank:Tank) Select the specified tank. This determines which tank most operations operate on.
+---@field public selectTank fun(tank:number):number Select the specified tank. (Documentation might be inaccurate) This determines which tank most operations operate on.
 ---@field public tankLevel fun(tank:number):number The the current fluid level in the specified tank, or, if none is specified, the selected tank.
 ---@field public tankSpace fun():number The the remaining fluid capacity in the specified tank, or, if none is specified, the selected tank.
 ---@field public compareFluidTo fun(tank:number):boolean Tests whether the fluid in the selected tank is the same as in the specified tank.
