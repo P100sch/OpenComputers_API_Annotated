@@ -1,0 +1,43 @@
+---@class Component inofficial documentation, because I found none.
+---@field list fun(name:string):table<string,string> Returns: Dictionary of components with there addresses(UUID) as there keys, filtered by the name given. name - Filter for dictionary values.
+---@field get fun(addressAbbreviation:string):string Returns: Full address based of the abbreviation. addressAbbreviation - Abbreviation of a component address.
+---@field proxy fun(address:string):ComponentProxy Returns: Proxy with methods wrapping calls to component. Reference Component for field definitions. address - Component address.
+---@field invoke fun(address:string,method:string,...:any):any Calls specified method with the specified arguments. address - Component address. method - Method to call.
+---@field isAvailable fun(component:string):boolean Returns: Whether a component of that type is available. component - Component type name.
+---@field getPrimary fun(component:string):ComponentProxy Returns: Proxy of standard component of the given type, can be random if more than one is present. component - Component type name.
+---@field printer3d Printer3d Primary Printer3d.
+---@field abstract_bus AbstractBus Primary AbstractBus.
+---@field access_point AccessPoint Primary AccessPoint.
+---@field chunkloader Chunkloader Primary Chunkloader.
+---@field computer Computer Primary Computer.
+---@field crafting Crafting Primary Crafting.
+---@field data Datacard Primary Datacard.
+---@field database Database Primary Database.
+---@field debug Debug Primary Debug.
+---@field drone Drone Primary Drone.
+---@field drive Drive Primary Drive.
+---@field eeprom EEPROM Primary EEPROM.
+---@field experience Experience Primary Experience.
+---@field filesystem Filesystem Primary Filesystem.
+---@field generator Generator Primary Generator.
+---@field geolyzer Geolyzer Primary Geolyzer.
+---@field gpu GPU Primary GPU.
+---@field hologram Hologram Primary Hologram.
+---@field internet Internet Primary Internet.
+---@field inventory_controller InventoryController Primary InventoryController.
+---@field leash Leash Primary Leash.
+---@field modem Modem Primary Modem.
+---@field motion_sensor MotionSensor Primary MotionSensor.
+---@field navigation Navigation Primary Navigation.
+---@field net_splitter NetSplitter Primary NetSplitter.
+---@field piston Piston Primary Piston.
+---@field redstone Redstone Primary Redstone.
+---@field robot Robot Primary Robot.
+---@field screen Screen Primary Screen.
+---@field sign Sign Primary Sign.
+---@field tank_controller TankController Primary TankController.
+---@field tractor_beam TractorBeam Primary TractorBeam.
+---@field transposer Transposer Primary Transposer.
+---@field tunnel Tunnel Primary Tunnel.
+---@field world_sensor WorldSensor Primary WorldSensor.
+local component = require("component")

@@ -1,4 +1,4 @@
----@class EEPROM
+---@class EEPROM : ComponentProxy
 ---@field get fun():string Get the currently stored byte array.
 ---@field set fun(data:string) Overwrite the currently stored byte array.
 ---@field getLabel fun():string Get the label of the EEPROM.
