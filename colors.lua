@@ -1,4 +1,4 @@
----@class Colors Has a indexer to convert numbers back to strings
+---@class Colors This "API" provides a global table to allow you to refer to sides / directions by name, as opposed to their numbers. The underlying number values are identical to Minecraft's internal numbering (as well as the `ForgeDirection` Enum). This table serves as a two-directional look-up, so you can resolve names to numbers, but also numbers back to a human readable name. For example, `sides.top` has the value `1`, whereas `sides[1]` has the string value `top`. A couple of aliases for the side names are available, so it's less likely to accidentally pick the wrong one. These are the basic values:
 ---@field white number Number: 0
 ---@field orange number Number: 1
 ---@field magenta number Number: 2
