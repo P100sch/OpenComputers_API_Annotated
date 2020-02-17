@@ -1,0 +1,19 @@
+---@class Colors Has a indexer to convert numbers back to strings
+---@field white number Number: 0
+---@field orange number Number: 1
+---@field magenta number Number: 2
+---@field lightblue number Number: 3
+---@field yellow number Number: 4
+---@field lime number Number: 5
+---@field pink number Number: 6
+---@field gray number Number: 7
+---@field silver number Number: 8
+---@field cyan number Number: 9
+---@field purple number Number: 10
+---@field blue number Number: 11
+---@field brown number Number: 12
+---@field green number Number: 13
+---@field red number Number: 14
+---@field black number Number: 15
+---@field __index fun(color:number):string Converts numbers back to strings
+local colors = require("colors")
