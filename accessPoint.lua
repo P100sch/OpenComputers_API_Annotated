@@ -1,3 +1,4 @@
+--TODO: Add Markdown
 ---@class AccessPoint : ComponentProxy
 ---@field getStrength fun():number Get the signal strength (range) used when relaying messages.
 ---@field setStrength fun(strength:number):number Set the signal strength (range) used when relaying messages.

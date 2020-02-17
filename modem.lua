@@ -1,3 +1,4 @@
+--TODO: Add Markdown
 ---@class Modem : ComponentProxy
 ---@field isWireless fun():boolean Returns whether this modem is capable of sending wireless messages.
 ---@field maxPacketSize fun():number Returns the maximum packet size for sending messages via network cards. Defaults to 8192. You can change this in the OpenComputers configuration file. Every value in a message adds two bytes of overhead. (Even if there's only one value.) Numbers add another 8 bytes, true/false/nil another 4 bytes, and strings exactly as many bytes as the string contains—though empty strings still count as one byte. Examples: "foo" is a 5-byte packet; two bytes of overhead and a three byte string.    "currentStatus",300 is a 25-byte packet; four bytes overhead, a 13-byte string, and 8 bytes for a number.

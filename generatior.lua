@@ -1,3 +1,4 @@
+--TODO: Add Markdown
 ---@class Generator : ComponentProxy
 ---@field count fun():number The current number of fuel items still in the generator.
 ---@field insert fun(count:number):boolean,string Inserts up to the specified number of fuel items from the currently selected inventory slot into the generator's inventory. Returns true if at least one item was moved to the generator's inventory. Returns false and an error message otherwise. Possible error messages are: “selected slot does not contain fuel” if the selected slot has no item which can be burnt “different fuel type already queued” if there is already another type of item in the generator “queue is full” if there already are 64 items of that type in the generator

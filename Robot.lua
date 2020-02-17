@@ -1,3 +1,4 @@
+--TODO: Add Markdown
 ---@class Robot : ComponentProxy
 ---@field public name fun():string Returns the robot's name. The name of a Robot is set initially during it's creation and cannot be changed programmatically. However you can change it using an anvil if you want.
 ---@field public detect fun():boolean,string Detects what is directly in front of the robot and returns if the robot could move through it as well as a generic description. Returns: true if the robot if whatever is in front of the robot would prevent him from moving forward (a block or an entity) (Note: Drones return true even if the block is passable), false otherwise. The second parameter describes what is in front in general and is one of either entity, solid, replaceable, liquid, passable or air.
