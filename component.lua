@@ -23,7 +23,7 @@
 ---@field geolyzer Geolyzer Primary Geolyzer.
 ---@field gpu GPU Primary GPU.
 ---@field hologram Hologram Primary Hologram.
----@field internet Internet Primary Internet.
+---@field internet InternetCard Primary Internet.
 ---@field inventory_controller InventoryController Primary InventoryController.
 ---@field leash Leash Primary Leash.
 ---@field modem Modem Primary Modem.
