@@ -1,0 +1,2 @@
+---@class Experience : ComponentProxy
+---@field level fun():number Gets the level of experience stored in the experience upgrade.

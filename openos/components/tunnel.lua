@@ -1,0 +1,7 @@
+---@class Tunnel : ComponentProxy This card is similar to the [network card's component](https://ocdoc.cil.li/component:modem "component:modem"), but as it is only point-to-point, no ports can be configured, and the connection is always open.<br/>This card generates `modem_message` signals of the same format network cards do.
+---@field send fun(data...:nil|boolean|number|string) Sends the specified data to the card this one is linked to.
+---@field maxPacketSize fun():number Gets the maximum packet size (config setting).
+---@field getChannel fun():string Gets the tunnel address of the link card. This is also available in `linkChannel` using an inventory controller and getting the stack from an inventory slot.
+---@field getWakeMessage fun():string Gets the current wake-up message. When the network card detects the wake message (a string in the first argument of a network packet), on any port and the machine is off, the machine is started. This is the same functionality also provided by robots, cases, servers, drones, and tablets.
+---@field setWakeMessage fun(message:string,fuzzy:boolean):string Sets the wake-up message to the specified **string**. The message matching can be fuzzy (default is false). A fuzzy match ignores additional trailing arguments in the network packet.
+local tunnel = require("component").tunnel

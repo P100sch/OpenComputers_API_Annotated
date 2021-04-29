@@ -1,0 +1,11 @@
+---@class Navigation : ComponentProxy
+---@field getPosition fun():number,number,number|nil,string Gets the current relative position of the robot. This is the position relative to the center of the map item that was used to craft the upgrade. Note that the upgrade can be re-crafted with another map to change it's point of reference. Returns `nil` and the string `out of range` if the robot is too far away from the point of reference (i.e. when it is out of bounds of the map that was used to craft the upgrade).
+---@field getFacing fun():number Gets the current facing of the robot, as one of the `sides` constants.
+---@field getRange fun():number Gets the effective range of the upgrade. If the absolute value of the relative X or Z coordinate becomes larger than this, `getPosition()` will fail.
+---@field findWaypoints fun(range:number):Waypoint[] Finds all [waypoint blocks](https://ocdoc.cil.li/block:waypoint "block:waypoint") within the specified range.<br/>This returns a table that contains other tables. The top table has only numbered indices corresponding to each detected beacon. In each of this entries is another table, each row various aspects of the specified beacon: "position", "redstone", "label".<br/><br/>-   position returns a table with numbered indices in which 1 is x, 2 is y, and 3 is z. These numbers are the distance from the navigation component to the beacon in terms of block coordinates.<br/>-   redstone returns a single number that is the current strength of the redstone signal<br/>-   label returns a string that is the label of the beacon you can set by right clicking on it.<br/><br/>Below is an example of how the tables are set up. A single beacon's results are shown.<br/>| ------------------------- | -------- | --------------- | -- | -- | -- | -------- | ----- |<br/>|                           |          |<br/>| number: x distance        |          |<br/>| number: y distance        |          |<br/>| number: z distance        |          |<br/>| number: redstone strength |<br/>| string: beacon label      |
+local navigation = require("component").navigation
+
+---@class Waypoint
+---@field position number[] x, y, z distance
+---@field redstone number redstone strength
+---@field label string beacon label

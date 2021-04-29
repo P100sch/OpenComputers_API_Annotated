@@ -1,0 +1,23 @@
+---@class Datacard : ComponentProxy
+---@field crc32 fun(data:string):string Computes CRC-32 hash of the data. Result is in binary format. Tier 1 Callback.
+---@field decode64 fun(data:string):string Applies base64 decoding to the data. Tier 1 Callback.
+---@field encode64 fun(data:string):string Applies base64 encoding to the data. Result is in binary format. Tier 1 Callback.
+---@field md5 fun(data:string):string Computes MD5 hash of the data. Result is in binary format. Tier 1 Callback.
+---@field sha256 fun(data:string):string Computes SHA2-256 hash of the data. Result is in binary format. Tier 1 Callback.
+---@field deflate fun(data:string):string Applies deflate compression to the data. Tier 1 Callback.
+---@field inflate fun(data:string):string Applies inflate decompression to the data. Tier 1 Callback.
+---@field getLimit fun():number The maximum size of data that can be passed to other functions of the card. Tier 1 Callback.
+---@field encrypt fun(data:string,key:string,iv:string):string Applies AES encryption to the data using the key and (preferably) random IV. Tier 2 Callback.
+---@field decrypt fun(data:string,key:string,iv:string):string Reverses AES encryption on the data using the key and the IV. Tier 2 Callback.
+---@field random fun(len:number):string Generates a random binary string of `len` length. Tier 2 Callback.
+---@field generateKeyPair fun(bitLen:number):Key,Key Generates a public/private key pair for various cryptiographic functions.<br/>Optional second parameter specifies key length, 256 or 384 bits accepted.<br/>Key types include "ec-public" and "ec-private". Keys can be serialized with<br/>`key.serialize():string` Keys also contain the function `key.isPublic():boolean`<br/>Tier 3 Callback.
+---@field ecdsa fun(data:string,key:Key,sig:string):string|boolean Generates a signiture of data using a private key. If signature is present verifies the signature using the public key, the previously generated signature string and the original string. Tier 3 Callback.
+---@field ecdh fun(privateKey:Key,publicKey:Key):string Generates a Diffie-Hellman shared key using the first user's private key and<br/>the second user's public key. An example of a basic key relation:<br/>`ecdh(userA.private, userB.public) == ecdh(userB.private, userA.public)`<br/>Tier 3 Callback.
+---@field deserializeKey fun(data:string,type:string|"'ec-public'"|"'ec-private'"):Key Transforms a key from string to it's arbitrary type. Tier 3 Callback.
+local data = require("component").data
+
+---@class Key
+---@field isPublic fun():boolean Returns whether key is public.
+---@field keyType fun():(string|"'ec-public'"|"'ec-private'") Returns type of key.
+---@field serialize fun():string Returns string representation of key. Result is binary data.
+---@field type string Always "userdata".

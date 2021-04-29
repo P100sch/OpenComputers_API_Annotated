@@ -1,4 +1,4 @@
----@class Component inofficial documentation, because I found none.
+---@class ComponentAPI inofficial documentation, because I found none.
 ---@field list fun(name:string):table<string,string> Returns: Dictionary of components with there addresses(UUID) as there keys, filtered by the name given. name - Filter for dictionary values.
 ---@field get fun(addressAbbreviation:string):string Returns: Full address based of the abbreviation. addressAbbreviation - Abbreviation of a component address.
 ---@field proxy fun(address:string):ComponentProxy Returns: Proxy with methods wrapping calls to component. Reference Component for field definitions. address - Component address.
@@ -28,6 +28,7 @@
 ---@field leash Leash Primary Leash.
 ---@field modem Modem Primary Modem.
 ---@field motion_sensor MotionSensor Primary MotionSensor.
+---@field microcontroller Microcontroller Primary Microcontroller.
 ---@field navigation Navigation Primary Navigation.
 ---@field net_splitter NetSplitter Primary NetSplitter.
 ---@field piston Piston Primary Piston.

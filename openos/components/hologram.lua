@@ -1,0 +1,14 @@
+---@class Hologram : ComponentProxy These can be used to create holographic projections in a resolution of 48x32x48, over a maximum area of 9x6x9 blocks. Tier two holograms do not provide a higher resolution, instead they allow using up to three colors in the displayed hologram (as opposed to just one for the tier one hologram).
+---@field clear fun() Clears the hologram.
+---@field get fun(x:number,y:number,z:number):number Returns the value at the specified position.
+---@field set fun(x:number,y:number,z:number,value:number|boolean) Set the value for the specified position.
+---@field fill fun(x:number,z:number,minY:number,maxY:number,value:number) Fills an interval in the specified column column with the specified value. Will overwrite only the voxels in the interval. If `minY` is omitted it defaults to 1. The two interval ends are inclusive.
+---@field copy fun(x:number,z:number,sx:number,sz:number,tx:number,tz:number) Copies an area of columns by the specified translation.
+---@field getScale fun():number Returns the current render scale of the hologram.
+---@field setScale fun(value:number) Set the render scale. A larger scale consumes more energy. The minimum scale is 0.33, where the hologram will fit in a single block space, the maximum scale is 3, where the hologram will take up a 9x6x9 block space.
+---@field getTranslation fun():number,number,number Return the current translation offset.
+---@field setTranslation fun(x:number,y:number,z:number) Set the translation vector. The hologram display will be offset by this vector from its normal location. The maximum allowable translation is a function of tier. Units are the hologram's size, so the distance translated increases and decreases with scale as well.
+---@field maxDepth fun():number The color depth supported by the hologram.
+---@field getPaletteColor fun(index:number):number Get the hex color defined for the specified value.
+---@field setPaletteColor fun(index:number,value:number):number Set the hex color defined for the specified value.
+local hologram = require("component").hologram

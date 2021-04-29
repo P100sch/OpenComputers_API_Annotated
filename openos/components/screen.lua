@@ -1,0 +1,11 @@
+---@class Screen : ComponentProxy
+---@field isOn fun():boolean Returns whether the screen is currently on.
+---@field turnOn fun():boolean Turns the screen on. Returns true if it was off.
+---@field turnOff fun():boolean Turns off the screen. Returns true if it was on.
+---@field getAspectRatio fun():number,number The aspect ratio of the screen. For multi-block screens this is the number of blocks, horizontal and vertical.
+---@field getKeyboards fun():table The list of keyboards attached to the screen.
+---@field setPrecise fun(enabled:boolean):boolean Set whether to use high-precision mode (sub-pixel mouse event position).<br/>Requires Screen (Tier 3).
+---@field isPrecise fun():boolean Check whether high-precision mode is enabled (sub-pixel mouse event position).<br/>Requires Screen (Tier 3).
+---@field setTouchModeInverted fun(enabled:boolean):boolean Sets Inverted Touch mode (Sneak-activate opens GUI if set to true).
+---@field isTouchModeInverted fun():boolean Check to see if Inverted Touch mode is enabled (Sneak-activate opens GUI is set to true).
+local screen = require("component").screen

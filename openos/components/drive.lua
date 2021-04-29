@@ -1,0 +1,11 @@
+---@class Drive : ComponentProxy This component is provided by [Floppy Disks](https://ocdoc.cil.li/item:floppy_disk "item:floppy_disk") or [Hard Disk Drives](https://ocdoc.cil.li/item:hard_disk_drive "item:hard_disk_drive") in Unmanaged mode (for Managed mode, see [Filesystem](https://ocdoc.cil.li/component:filesystem "component:filesystem"))<br/><br/>To switch a managed drive to Unmanaged mode, just right click with the item in your hand and select Unmanaged mode (Warning: this will wipe the drive).
+---@field readByte fun(offset:number):number Read a single byte at the specified offset.
+---@field writeByte fun(offset:number, value:number) Write a single byte to the specified offset.
+---@field getSectorSize fun():number Returns the size of a single sector on the drive, in bytes.
+---@field getLabel fun():string Get the current label of the drive.
+---@field setLabel fun(value:string):string Sets the label of the drive. Returns the new value, which may be truncated.
+---@field readSector fun(sector:number):string Read the current contents of the specified sector.
+---@field writeSector fun(sector:number,value:string) Write the specified contents to the specified sector.
+---@field getPlatterCount fun():number Returns the number of platters in the drive.
+---@field getCapacity fun():number Returns the total capacity of the drive, in bytes.
+local drive = require("component").drive

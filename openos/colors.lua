@@ -1,19 +1,19 @@
 ---@class Colors This "API" provides a global table to allow you to refer to sides / directions by name, as opposed to their numbers. The underlying number values are identical to Minecraft's internal numbering (as well as the `ForgeDirection` Enum). This table serves as a two-directional look-up, so you can resolve names to numbers, but also numbers back to a human readable name. For example, `sides.top` has the value `1`, whereas `sides[1]` has the string value `top`. A couple of aliases for the side names are available, so it's less likely to accidentally pick the wrong one. These are the basic values:
----@field white number Number: 0
----@field orange number Number: 1
----@field magenta number Number: 2
----@field lightblue number Number: 3
----@field yellow number Number: 4
----@field lime number Number: 5
----@field pink number Number: 6
----@field gray number Number: 7
----@field silver number Number: 8
----@field cyan number Number: 9
----@field purple number Number: 10
----@field blue number Number: 11
----@field brown number Number: 12
----@field green number Number: 13
----@field red number Number: 14
----@field black number Number: 15
+---@field white number|"0"
+---@field orange number|"1"
+---@field magenta number|"2"
+---@field lightblue number|"3"
+---@field yellow number|"4"
+---@field lime number|"5"
+---@field pink number|"6"
+---@field gray number|"7"
+---@field silver number|"8"
+---@field cyan number|"9"
+---@field purple number|"10"
+---@field blue number|"11"
+---@field brown number|"12"
+---@field green number|"13"
+---@field red number|"14"
+---@field black number|"15"
 ---@field __index fun(color:number):string Converts numbers back to strings
 local colors = require("colors")

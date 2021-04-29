@@ -1,0 +1,4 @@
+---@class MotionSensor : ComponentProxy This is the component provided by the [Motion Sensor](https://ocdoc.cil.li/block:motion_sensor "block:motion_sensor"). When an entity within line of sight of the [Motion Sensor](https://ocdoc.cil.li/block:motion_sensor "block:motion_sensor") moves faster than the threshold a [motion](https://ocdoc.cil.li/component:signals#motion_sensor_block "component:signals") event is queued. The sensor has a radius limit of 8 and is updated every half second.
+---@field getSensitivity fun():number Gets the current sensitivity of the sensor, i.e. at which speed threshold of distance / second it triggers.
+---@field setSensitivity fun(value:number):number Sets the sensor's sensitivity to the specified value, returns the old value.
+local motion_sensor = require("component").motion_sensor

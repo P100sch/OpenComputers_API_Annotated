@@ -1,0 +1,16 @@
+---@class Printer3d : ComponentProxy
+---@field commit fun(counter:number):boolean Commit and begin printing the current configuration.
+---@field setLabel fun(value:string) Commit and begin printing the current configuration.
+---@field getLabel fun():string Get the current label for the volume being printed.
+---@field setTooltip fun(value:string) Get the current label for the volume being printed.
+---@field getTooltip fun():string Gets the current tooltip of the volume being printed.
+---@field setButtonMode fun(value:boolean) Set whether the printed block should automatically return to its off state.
+---@field isButtonMode fun():boolean Gets whether the printed block should automatically return to its off state.
+---@field setRedstoneEmitter fun(value:boolean) Sets whether the printed block should emit a redstone signal while in its active state.
+---@field isRedstoneEmitter fun():boolean Gets whether the printed block should emit a redstone signal while in its active state.
+---@field addShape fun(minX:number,minY:number,minZ:number,maxX:number,maxY:number,maxZ:number,texture:string,state:boolean,tint:number) Adds the shape to the printer's current configuration, optionally specifying whether it is for the off or on state.
+---@field getShapeCount fun():number Gets the number of shapes in the current configuration.
+---@field getMaxShapeCount fun():number Gets the maximum allowed number of shapes.
+---@field status fun():string|"'busy'"|"'idle'",number|boolean The current state of the printer, 'busy' or 'idle' (string), followed by the progress (number) or model validity (boolean), respectively.
+---@field reset fun() Resets the current job for the printer and stops printing (current job being printed will finish).
+local printer3d = require("component").printer3d

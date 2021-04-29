@@ -1,0 +1,20 @@
+---@class Filesystem : ComponentProxy This component is provided by [Floppy Disks](https://ocdoc.cil.li/item:floppy_disk "item:floppy_disk") or [Hard Disk Drives](https://ocdoc.cil.li/item:hard_disk_drive "item:hard_disk_drive") in Managed mode (for Unmanaged mode, see [Drive](https://ocdoc.cil.li/component:drive "component:drive"))
+---@field spaceUsed fun():number The currently used capacity of the file system, in bytes.
+---@field open fun(path:string,mode:string|"'r'"|"'rb'"|"'w'"|"'wb'"|"'a'"|"'ab'"):number Opens a new file descriptor and returns its handle.
+---@field seek fun(handle:number,whence:string|"'cur'"|"'set'"|"'end'",offset:number):number Seeks in an open file descriptor with the specified handle. Returns the new pointer position.
+---@field makeDirectory fun(path:string):boolean Creates a directory at the specified absolute path in the file system. Creates parent directories, if necessary.
+---@field exists fun(path:string):boolean Returns whether an object exists at the specified absolute path in the file system.
+---@field isReadOnly fun():boolean Returns whether the file system is read-only.
+---@field write fun(handle:number,value:string):boolean Writes the specified data to an open file descriptor with the specified handle.
+---@field spaceTotal fun():number The overall capacity of the file system, in bytes.
+---@field isDirectory fun(path:string):boolean Returns whether the object at the specified absolute path in the file system is a directory.
+---@field rename fun(from:string,to:string):boolean Renames/moves an object from the first specified absolute path in the file system to the second.
+---@field list fun(path:string):table Returns a list of names of objects in the directory at the specified absolute path in the file system.
+---@field lastModified fun(path:string):number Returns the (real world) timestamp of when the object at the specified absolute path in the file system was modified.
+---@field getLabel fun():string Get the current label of the file system.
+---@field remove fun(path:string):boolean Removes the object at the specified absolute path in the file system.
+---@field close fun(handle:number) Closes an open file descriptor with the specified handle.
+---@field size fun(path:string):number Returns the size of the object at the specified absolute path in the file system.
+---@field read fun(handle:number,count:number):string|nil Reads up to the specified amount of data from an open file descriptor with the specified handle. Returns nil when EOF is reached.
+---@field setLabel fun(value:string):string Sets the label of the file system. Returns the new value, which may be truncated.
+local filesystem = require("component").filesystem
