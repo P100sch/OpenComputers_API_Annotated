@@ -1,5 +1,6 @@
----@class Trading inofficial documentation, because I found none.
+---@class Trading : ComponentProxy inofficial documentation, because I found none.
 ---@field getTrades fun():Trade[] Returns a table of trades in range as Trade objects.
+local trading = require("component").trading
 
 ---@class Trade
 ---@field getInput fun():ItemStack, ItemStack Returns the items the merchant wants for this trade.

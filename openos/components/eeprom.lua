@@ -1,4 +1,3 @@
---TODO: Add Markdown
 ---@class EEPROM : ComponentProxy
 ---@field get fun():string Get the currently stored byte array.
 ---@field set fun(data:string) Overwrite the currently stored byte array.
