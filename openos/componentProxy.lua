@@ -1,3 +1,4 @@
 ---@class ComponentProxy inofficial documentation, because I found none.
 ---@field address string UUID Address of component.
----@field type string Type of component
+---@field type string Type of component.
+---@field slot number The slot of the component.
